@@ -541,6 +541,7 @@
     width: 17rem !important;
     height: 24.3rem !important;
     position: absolute;
+    overflow: auto;
     left: 30%;
     z-index: 99999;
   }
@@ -872,6 +873,22 @@
  font-size: 13px;
 }
 
+.review_popup{
+  width: 13rem !important;
+  height: 20.3rem !important;
+  position: absolute;
+  left: 15%;
+  z-index: 99999;
+  overflow: auto;
+}
+
+.review_popup_x{ 
+  /* display: block; */
+  float: right;
+  position: absolute;
+  top: 3%;
+  right: 6%;
+}
 
 .testimonals_card {
   padding: 0.7rem;
@@ -879,8 +896,8 @@
 }
 
 .user_name{
-  font-size: 14px;
-}
+  font-size: 12px;
+} 
 
 .footer_social_medias { 
   flex-direction: column;
@@ -958,7 +975,7 @@ footer {
 }
 
 .user_place {
-  font-size: 13.5px;
+  font-size: 10px;
 }
 
 }

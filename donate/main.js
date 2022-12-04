@@ -10,8 +10,6 @@ function open_close_bar() {
   document.querySelector(".main_div").classList.toggle("dimmed_area");
 }
 
-
-
 function closePopUps() {
   document.querySelector(".header_abs") !== null
     ? open_close_bar()
@@ -25,39 +23,7 @@ const disableColor = () => {
   prices.forEach((a) => (a.style.color = "black"));
 };
 
-const testimonalCards = document.querySelectorAll(".testimonals_card");
-let currentCard = null;
-function closeReviewPopup(event) {
-  event?.stopPropagation();
-  testimonalCards[currentCard].classList.remove("review_popup");
-  document.querySelector(".main_div").classList.remove("dimmed_area");
-}
 
-let i = document.createElement("i");
-function showReview(index) {
-  testimonalCards.forEach((a) => a.classList.remove("review_popup"));
-  testimonalCards[index].classList.add("review_popup");
-  document.querySelector(".main_div").classList.add("dimmed_area");
-
-  i.classList.add(
-    "fa-solid",
-    "fa-xmark",
-    "review_popup_x",
-    "dektop_hidden",
-    "tablet_block"
-  );
-  testimonalCards[index].appendChild(i);
-  i.onclick = (event) => {
-    closeReviewPopup(event);
-  };
-}
-
-testimonalCards.forEach((a, index) => {
-  a.onclick = () => {
-    showReview(index);
-    currentCard = index;
-  };
-});
  
 inputs.forEach((a, index) => {
   a.onchange = () => {
@@ -74,7 +40,7 @@ amountInput.oninput = () => {
     amountInput.value = amountInput.value.slice(0, 4);
     document.querySelector(".amount_error_msg").textContent =
       "Amount should not be more than 4 characteristcs";
-    // document.querySelector(".dollarSign").style.display = "none"
+    document.querySelector(".dollarSign").style.display = "none"
   } 
   document.querySelectorAll('input[name="dot"]').forEach(i=>{i.checked = false})
   document.querySelectorAll('.price').forEach(e=>{
